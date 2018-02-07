@@ -77,7 +77,7 @@ function get_year($date) {
  */
 function safe_metadata($item, $key, $options = null) {
     try {
-        return metadata($item, $key, $options);
+        return strip_formatting(metadata($item, $key, $options));
     } catch (Omeka_View_Exception $ex) {
         return null;
     } catch (Omeka_Record_Exception $ex) {
