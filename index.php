@@ -5,7 +5,7 @@
         <div>
             <?php echo link_to_item(item_image('fullsize', array(), 0, $item), array(), 'show', $item);?>
         </div>
-        <p class="caption"><?php echo metadata($item, array('Dublin Core', 'Title')); ?></p>
+        <p class="caption"><?php echo metadata($item, 'rich_title', array('no_escape' => true)); ?></p>
     </div>
     <?php endif; ?>
     <?php if ($homepageText = get_theme_option('Homepage Text')): ?>

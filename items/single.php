@@ -1,7 +1,7 @@
 <?php
 $caption = make_citation($item, true, false);
 $citation = make_citation($item);
-$title = metadata($item, array('Dublin Core', 'Title'));
+$title = metadata($item, 'rich_title', array('no_escape' => true));
 $description = metadata($item, array('Dublin Core', 'Description'), array('snippet' => 150));
 $metaid=uniqid();
 if (get_theme_option('Single Line Item')) {
