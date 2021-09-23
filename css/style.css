@@ -668,8 +668,9 @@ header:after {
   text-indent: -9999px;
 }
 #search-container button:after {
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Free";
   content: "\f002";
+  font-weight: 900;
   text-indent: 0;
   position: absolute;
   top: 0;
@@ -942,7 +943,8 @@ header:after {
   z-index: 1;
 }
 #primary-nav [aria-haspopup="true"]:after {
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   content: "\f0da";
   margin: -1px 0 0 .5em;
   display: inline-block;
@@ -1272,7 +1274,7 @@ header:after {
 }
 
 .desc a:after, .asc a:after {
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Free";
   display: inline-block;
   height: 0;
   width: 0;
@@ -1565,7 +1567,8 @@ ul.title-list {
 }
 .remove_search:after {
   content: "\f00d";
-  font-family: "FontAwesome";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   text-indent: 0;
   text-align: center;
   width: 100%;

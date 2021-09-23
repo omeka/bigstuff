@@ -10,7 +10,7 @@
   }
 
   h1,
-  #site-title {
+#site-title {
     font-size: 16pt;
     font-weight: bold;
   }
@@ -40,13 +40,13 @@
   }
 
   #search-container,
-  #primary-nav,
-  #header-image,
-  .navigation,
-  .pagination,
-  #exhibit-page-navigation,
-  .exhibit-section-nav,
-  .exhibit-page-nav {
+#primary-nav,
+#header-image,
+.navigation,
+.pagination,
+#exhibit-page-navigation,
+.exhibit-section-nav,
+.exhibit-page-nav {
     display: none;
   }
 
