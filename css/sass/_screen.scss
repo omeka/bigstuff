@@ -173,9 +173,9 @@ header {
     width: 50%;
     font-weight: 700;
     font-family: $title-stack;
-    font-variant: small-caps;
-    letter-spacing: .1ex;
+    letter-spacing: -.1ex;
     color: $light-border;
+    text-transform: uppercase;
     font-size: 5 * $base-font-size;
     line-height: 90%;
     position: relative;
@@ -360,17 +360,14 @@ header {
     clear: both;
     @include container;
     z-index: 50;
-    border: 1px solid $light-border;
-    background-color: $light-background;
 
     /* mega menu list */
     .nav-menu {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: block;
         position: relative;
-        width: 100%;
         list-style: none;
+        margin: 0 0 0 -1px;
+        padding: 0 0 0 1px;
         z-index: 15;
     }
 
@@ -395,6 +392,10 @@ header {
         float: left;
         position: relative;
         overflow: visible;
+
+        &:first-child > a {
+            border-left: 1px solid $light-border;
+        }
     }
 
     /* first descendant link within a top level navigation item */
@@ -402,6 +403,7 @@ header {
         position: relative;
         display: inline-block;
         margin: 0 0 -1px 0;
+        border: 1px solid $light-border;
     }
 
     .nav-item:not(:first-child) > a {
@@ -488,6 +490,7 @@ header {
         text-decoration: none;
         display: block;
         padding: rhythm(.5) 18px;
+        background: $light-background;
     }
 
     a:hover,

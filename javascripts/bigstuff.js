@@ -17,7 +17,7 @@ if (!Bigstuff) {
     Bigstuff.showMetadata = function(metaid, itemid) {
         var meta = $(metaid);
         meta.position({
-            my: "left+100 center",
+            my: "left+100 top",
             at: "left bottom",
             of: itemid
         });
