@@ -641,7 +641,7 @@ header:after {
 #search-container h2 {
   display: none;
 }
-#search-container input[type=text], #search-container button {
+#search-container input[type=text], #search-container #submit_search {
   border: 1px solid #cccccc;
   background: #fafafa;
   -moz-appearance: none;
@@ -657,7 +657,7 @@ header:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-#search-container button {
+#search-container #submit_search {
   background: #336699;
   color: white;
   position: absolute;
@@ -667,7 +667,7 @@ header:after {
   width: 30px;
   text-indent: -9999px;
 }
-#search-container button:after {
+#search-container #submit_search:after {
   font-family: "Font Awesome 5 Free";
   content: "\f002";
   font-weight: 900;
@@ -682,11 +682,12 @@ header:after {
 }
 
 .show-advanced.button {
+  background: #103cb1;
   width: 30px;
   right: 0;
   top: 0;
   bottom: 0;
-  border-left: 1px solid #005177;
+  border: 0;
   position: absolute;
   text-decoration: none;
   text-indent: -9999px;
@@ -703,9 +704,9 @@ header:after {
   position: absolute;
   width: 100%;
   color: white;
-  background: #103cb1;
   top: 0;
   bottom: 0;
+  left: 0;
   font-size: 14px;
   line-height: 30px;
 }
@@ -744,7 +745,7 @@ header:after {
   margin-bottom: 18px;
 }
 
-#search-container.with-advanced .button {
+#search-container.with-advanced .show-advanced {
   right: 30px;
 }
 
