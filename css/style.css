@@ -1278,6 +1278,7 @@ header:after {
 
 .desc a:after, .asc a:after {
   font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   display: inline-block;
   height: 0;
   width: 0;
