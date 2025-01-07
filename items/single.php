@@ -6,7 +6,7 @@ $description = metadata($item, array('Dublin Core', 'Description'), array('snipp
 $metaid=uniqid();
 if (get_theme_option('Single Line Item')) {
     $class = "single-line item record";
-    $mouseover = "onmouseover=\"Bigstuff.showMetadata('#meta-${metaid}', '#item-${metaid}')\"";
+    $mouseover = "onmouseenter=\"Bigstuff.showMetadata('#meta-${metaid}', '#item-${metaid}')\"";
     $mouseleave = "onmouseleave=\"Bigstuff.hideMetadata('#meta-${metaid}')\"";
 } else {
     $class = "item record";
@@ -14,8 +14,8 @@ if (get_theme_option('Single Line Item')) {
     $mouseleave = "";
 }
 ?>
-<div class="<?php echo $class; ?>" id="item-<?php echo $metaid; ?>" <?php echo $mouseover; ?> <?php echo $mouseleave; ?>>
-    <h4><?php echo link_to_item($caption, array(), 'show', $item); ?></h4>
+<div class="<?php echo $class; ?>" id="item-<?php echo $metaid; ?>" <?php echo $mouseleave; ?>>
+    <h4 <?php echo $mouseover; ?>><?php echo link_to_item($caption, array(), 'show', $item); ?></h4>
     <div class="item-meta" id="meta-<?php echo $metaid; ?>">
         <?php if (metadata($item, 'has thumbnail')): ?>
             <div class="item-img">

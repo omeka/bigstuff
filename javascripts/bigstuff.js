@@ -16,12 +16,13 @@ if (!Bigstuff) {
     };
     Bigstuff.showMetadata = function(metaid, itemid) {
         var meta = $(metaid);
+        meta.show();
         meta.position({
             my: "left+100 top",
             at: "left bottom",
-            of: itemid
+            of: itemid,
+            within: '#content',
         });
-        meta.show();
     }
 
     Bigstuff.hideMetadata = function(metaid) {
