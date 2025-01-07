@@ -1,5 +1,5 @@
 <?php
-$caption = make_citation($item, true, false);
+$caption = make_caption($item);
 $citation = make_citation($item);
 $title = metadata($item, array('Dublin Core', 'Title'));
 $description = metadata($item, array('Dublin Core', 'Description'), array('snippet' => 150));

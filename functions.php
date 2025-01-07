@@ -465,6 +465,14 @@ function make_citation($item, $html = true, $full = true) {
     return make_default_citation($item, $html, $full);
 }
 
+function make_caption($item)
+{
+    global $AUTHOR_ELEMENT, $TITLE_ELEMENT;
+    $caption = add_element('', safe_metadata($item, $AUTHOR_ELEMENT));
+    $caption = add_element($caption, safe_metadata($item, $TITLE_ELEMENT), '<em>', '</em>');
+    return $caption;
+}
+
 /**
  * Find an item that can be used as a 'hero shot'.
  * <p>
