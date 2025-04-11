@@ -468,8 +468,22 @@ function make_citation($item, $html = true, $full = true) {
 function make_caption($item)
 {
     global $AUTHOR_ELEMENT, $TITLE_ELEMENT;
-    $caption = add_element('', safe_metadata($item, $AUTHOR_ELEMENT));
-    $caption = add_element($caption, safe_metadata($item, $TITLE_ELEMENT), '<em>', '</em>');
+    $itemLabels = get_theme_option_with_default('item_labels', 'title_creator');
+
+    switch ($itemLabels) {
+    case 'title_creator':
+    default:
+        $caption = add_element('', safe_metadata($item, $TITLE_ELEMENT), '<em>', '</em>');
+        $caption = add_element($caption, safe_metadata($item, $AUTHOR_ELEMENT));
+        break;
+    case 'creator_title':
+        $caption = add_element('', safe_metadata($item, $AUTHOR_ELEMENT));
+        $caption = add_element($caption, safe_metadata($item, $TITLE_ELEMENT), '<em>', '</em>');
+        break;
+    case 'title':
+        $caption = safe_metadata($item, $TITLE_ELEMENT);
+        break;
+    }
     return $caption;
 }
 
