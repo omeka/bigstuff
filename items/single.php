@@ -3,20 +3,11 @@ $caption = make_caption($item);
 $citation = make_citation($item);
 $title = metadata($item, array('Dublin Core', 'Title'));
 $description = metadata($item, array('Dublin Core', 'Description'), array('snippet' => 150));
-$metaid=uniqid();
-if (get_theme_option('Single Line Item')) {
-    $class = "single-line item record";
-    $mouseover = "onmouseenter=\"Bigstuff.showMetadata('#meta-${metaid}', '#item-${metaid}')\"";
-    $mouseleave = "onmouseleave=\"Bigstuff.hideMetadata('#meta-${metaid}')\"";
-} else {
-    $class = "item record";
-    $mouseover = "";
-    $mouseleave = "";
-}
+$class = get_theme_option('Single Line Item') ? 'single-line item record' : 'item record';
 ?>
-<div class="<?php echo $class; ?>" id="item-<?php echo $metaid; ?>" <?php echo $mouseleave; ?>>
-    <h4 <?php echo $mouseover; ?>><?php echo link_to_item($caption, array(), 'show', $item); ?></h4>
-    <div class="item-meta" id="meta-<?php echo $metaid; ?>">
+<div class="<?php echo $class; ?>">
+    <h4><?php echo link_to_item($caption, array(), 'show', $item); ?></h4>
+    <div class="item-meta">
         <?php if (metadata($item, 'has thumbnail')): ?>
             <div class="item-img">
                 <?php echo link_to_item(item_image('square_thumbnail', array(), 0, $item), array(), 'show', $item); ?>

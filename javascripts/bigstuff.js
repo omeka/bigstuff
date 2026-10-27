@@ -14,21 +14,22 @@ if (!Bigstuff) {
             $("#mobile-nav .navigation").slideToggle();
         });
     };
-    Bigstuff.showMetadata = function(metaid, itemid) {
-        var meta = $(metaid);
-        meta.show();
-        meta.position({
-            my: "left+100 top",
-            at: "left bottom",
-            of: itemid,
-            within: '#content',
-        });
-    }
-
-    Bigstuff.hideMetadata = function(metaid) {
-        var meta = $(metaid);
-        meta.hide();
-    }
+    Bigstuff.metadataHover = function() {
+        $('.item.single-line h4')
+            .on('mouseenter', function () {
+                var meta = $(this).siblings('.item-meta');
+                meta.show();
+                meta.position({
+                    my: 'left+100 top',
+                    at: 'left bottom',
+                    of: this,
+                    within: '#content',
+                });
+                $(this).parent().one('mouseleave', function () {
+                    meta.hide();
+                });
+            })
+    };
 })(jQuery)
 
 

@@ -26,6 +26,7 @@
         Omeka.skipNav();
         Omeka.megaMenu();
         Bigstuff.dropDown();
+        Bigstuff.metadataHover();
     });
 </script>
 
